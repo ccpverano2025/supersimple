@@ -1,235 +1,422 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consultoría en Energía Solar para Edificios Urbanos | SolarUrban</title>
     <meta name="description" content="Expertos en paneles solares, baterías e inversores para edificios multifamiliares en ciudades.">
-    <meta name="keywords" content="energía solar, paneles solares, baterías solares, inversores, consultoría solar, edificios urbanos, multihabitacionales">
-    <!-- Google Fonts CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="keywords" content="Consultoría, Energía Solar, Paneles Solares, Baterías, Inversores, Edificios Urbanos, Multifamiliares, Sostenibilidad, SolarUrban">
+    <meta name="author" content="SolarUrban Consultoría">
+
     <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts: Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome 6 CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <!-- Embedded CSS for custom styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://via.placeholder.com/32x32?text=SU" type="image/png">
+
+    <!-- Embedded CSS for custom styling -->
     <style>
-        /* General Styles */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             color: #333;
-            background-color: #f8f9fa;
+            background: #f5f7fa;
         }
-        a {
-            text-decoration: none;
-        }
-        /* Header Styles */
+        /* Header & Navbar */
         .navbar {
-            background-color: #4CAF50; /* Green for eco-friendly */
-            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            background: #fff;
         }
         .navbar-brand {
-            color: #fff;
             font-weight: 700;
+            color: #4CAF50 !important;
+            letter-spacing: 1px;
         }
         .nav-link {
-            color: #fff !important;
-            transition: color 0.3s ease;
+            font-weight: 500;
+            color: #2196F3 !important;
+            transition: color 0.2s;
         }
         .nav-link:hover {
-            color: #2196F3 !important; /* Blue hover */
+            color: #4CAF50 !important;
         }
-        .btn-cta {
-            background-color: #2196F3;
-            border-color: #2196F3;
-            color: #fff;
-            transition: background-color 0.3s ease;
+        .cta-btn {
+            background: #4CAF50;
+            color: #fff !important;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: background 0.2s;
         }
-        .btn-cta:hover {
-            background-color: #1976D2;
+        .cta-btn:hover {
+            background: #2196F3;
         }
         /* Hero Section */
         .hero-section {
-            background-image: url('https://via.placeholder.com/1920x1080?text=Solar+Panels+on+Urban+Buildings');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            padding: 150px 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            min-height: 90vh;
+            background: url('https://via.placeholder.com/1920x1080?text=Solar+Panels+on+Urban+Buildings') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 100px 0;
-            }
-        }
-        /* Fallback gradient if image fails */
-        .hero-section::before {
-            content: '';
+        .hero-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, #4CAF50, #2196F3);
-            opacity: 0.1;
-            z-index: -1;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(76,175,80,0.85) 0%, rgba(33,150,243,0.65) 100%);
+            z-index: 1;
         }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            max-width: 650px;
+            margin: auto;
+        }
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .lead-form {
+            background: rgba(255,255,255,0.93);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(33,150,243,0.12);
+            color: #333;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        .lead-form .form-control {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+        .lead-form .btn {
+            width: 100%;
+            background: #2196F3;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .lead-form .btn:hover {
+            background: #4CAF50;
+        }
+
         /* Services Section */
+        .services-section {
+            padding: 4rem 0 2rem 0;
+            background: #fff;
+        }
         .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(76,175,80,0.07);
+            transition: transform 0.18s, box-shadow 0.18s;
+            margin-bottom: 2rem;
+            background: #f8fbf7;
         }
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 6px 32px rgba(33,150,243,0.13);
         }
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: #4CAF50;
+            margin-bottom: 1rem;
         }
-        /* About Us Section */
+        .service-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2196F3;
+        }
+        .service-desc {
+            font-size: 1rem;
+            color: #333;
+            margin-top: 0.5rem;
+        }
+
+        /* About Us */
         .about-section {
-            background-color: #e9f7ef; /* Light green */
+            background: #e9f5ee;
+            padding: 3rem 0 2rem 0;
         }
-        .stat-box {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 8px;
+        .about-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2196F3;
+            margin-bottom: 1rem;
+        }
+        .about-desc {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-stat-box {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.2rem 2rem;
+            box-shadow: 0 2px 12px rgba(76,175,80,0.09);
+            font-size: 1.1rem;
+            color: #4CAF50;
+            font-weight: 600;
+            min-width: 220px;
             text-align: center;
-            transition: box-shadow 0.3s ease;
         }
-        .stat-box:hover {
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+
         /* Benefits Section */
+        .benefits-section {
+            background: #f6fafd;
+            padding: 3rem 0 2rem 0;
+        }
+        .benefits-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
         .benefit-item {
-            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 10px rgba(33,150,243,0.09);
+            padding: 1.2rem 1.8rem;
+            display: flex;
+            align-items: center;
+            min-width: 230px;
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 1rem;
         }
         .benefit-icon {
             font-size: 2rem;
             color: #2196F3;
-            margin-right: 15px;
+            margin-right: 1rem;
         }
+
         /* Contact Section */
         .contact-section {
-            background-color: #f8f9fa;
+            padding: 4rem 0 2rem 0;
+            background: #fff;
         }
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        .contact-form {
+            background: #f8fbf7;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(76,175,80,0.11);
+        }
+        .contact-form .form-control {
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .contact-form .btn {
+            background: #2196F3;
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .contact-form .btn:hover {
+            background: #4CAF50;
+        }
+        .contact-info {
+            margin-top: 2rem;
+        }
+        .contact-info i {
+            color: #2196F3;
+            margin-right: 0.7rem;
+        }
+        .contact-social {
+            margin-top: 1rem;
+            font-size: 1.6rem;
+        }
+        .contact-social a {
+            color: #4CAF50;
+            margin-right: 1.2rem;
+            transition: color 0.2s;
+        }
+        .contact-social a:hover {
+            color: #2196F3;
+        }
+        .map-placeholder {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(33,150,243,0.11);
+            margin-top: 2rem;
+            min-height: 250px;
+        }
+
         /* Footer */
         .footer {
-            background-color: #4CAF50;
+            background: #4CAF50;
             color: #fff;
+            padding: 1.2rem 0 0.4rem 0;
+            text-align: center;
+            font-size: 1rem;
+            position: relative;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 8px;
         }
         .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            background-color: #2196F3;
+            bottom: 28px;
+            right: 24px;
+            background: #2196F3;
             color: #fff;
             border: none;
-            padding: 10px;
             border-radius: 50%;
-            transition: opacity 0.3s ease;
+            width: 48px;
+            height: 48px;
+            font-size: 1.7rem;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.19);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
         }
         .back-to-top.show {
-            display: block;
+            display: flex;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .hero-title { font-size: 2rem; }
+            .about-stats { flex-direction: column; align-items: center; }
+            .benefits-list { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 767px) {
+            .hero-section { min-height: 70vh; }
+            .hero-content { padding: 1rem; }
+            .lead-form { padding: 1rem; }
+            .service-card { padding: 1rem; }
+            .about-section, .benefits-section, .services-section, .contact-section { padding: 2rem 0 1rem 0; }
         }
     </style>
 </head>
 <body>
-    <!-- Header: Fixed Navigation Bar -->
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <!-- Logo (text placeholder; edit to add image: <img src="logo.png" alt="SolarUrban Logo" class="me-2">) -->
-                <a class="navbar-brand" href="#">SolarUrban Consultoría</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                    </ul>
-                    <!-- CTA Button -->
-                    <a href="#contacto" class="btn btn-cta ms-3">Solicita una Consulta Gratuita</a>
-                </div>
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main Navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <!-- Logo Placeholder (text or image) -->
+                SolarUrban Consultoría
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn cta-btn ms-lg-3" aria-label="Solicita una Consulta Gratuita">Solicita una Consulta Gratuita</a>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-section position-relative">
-        <div class="container text-center">
-            <h1 class="display-4 fw-bold">Energía Solar Sostenible para Edificios Urbanos Multihabitacionales</h1>
-            <p class="lead">Expertos en despliegue de paneles solares, baterías e inversores para optimizar el consumo energético en ciudades.</p>
+    <section id="inicio" class="hero-section position-relative d-flex align-items-center justify-content-center">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title">Energía Solar Sostenible para Edificios Urbanos Multihabitacionales</h1>
+            <p class="hero-subtitle">Expertos en despliegue de paneles solares, baterías e inversores para optimizar el consumo energético en ciudades.</p>
             <!-- Lead Capture Form -->
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-6">
-                    <form id="hero-form" class="bg-white p-4 rounded shadow" aria-labelledby="hero-form-title">
-                        <h5 id="hero-form-title" class="text-dark mb-3">Solicita Información</h5>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required aria-required="true">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" id="email" placeholder="Email" required aria-required="true">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" id="mensaje" rows="3" placeholder="Mensaje" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-cta w-100">Enviar</button>
-                    </form>
+            <form class="lead-form" id="leadForm" aria-label="Formulario de Consulta Rápida">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="leadName" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
                 </div>
-            </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="leadEmail" name="email" placeholder="Email" aria-label="Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="leadMessage" name="mensaje" rows="2" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn" aria-label="Enviar Consulta">Enviar</button>
+            </form>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="servicios" class="py-5">
+    <section id="servicios" class="services-section">
         <div class="container">
-            <h2 class="text-center mb-5">Nuestros Servicios</h2>
-            <div class="row">
-                <!-- Service Card 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card h-100 text-center p-4">
-                        <i class="fas fa-solar-panel service-icon mb-3"></i>
-                        <h5>Instalación de Paneles Solares</h5>
-                        <p>Diseño e instalación personalizada para techos urbanos.</p>
+            <h2 class="text-center mb-5" style="color:#4CAF50;font-weight:700;">Nuestros Servicios</h2>
+            <div class="row justify-content-center">
+                <!-- Service 1 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-solar-panel service-icon" aria-hidden="true"></i>
+                            <div class="service-title">Instalación de Paneles Solares</div>
+                            <div class="service-desc">Diseño e instalación de sistemas fotovoltaicos adaptados a estructuras urbanas multifamiliares.</div>
+                        </div>
                     </div>
                 </div>
-                <!-- Service Card 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card h-100 text-center p-4">
-                        <i class="fas fa-battery-full service-icon mb-3"></i>
-                        <h5>Integración de Baterías de Almacenamiento</h5>
-                        <p>Almacenamiento eficiente para uso nocturno y emergencias.</p>
+                <!-- Service 2 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-battery-full service-icon" aria-hidden="true"></i>
+                            <div class="service-title">Integración de Baterías de Almacenamiento</div>
+                            <div class="service-desc">Soluciones de almacenamiento para maximizar la autonomía y eficiencia energética.</div>
+                        </div>
                     </div>
                 </div>
-                <!-- Service Card 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card h-100 text-center p-4">
-                        <i class="fas fa-plug service-icon mb-3"></i>
-                        <h5>Configuración de Inversores Inteligentes</h5>
-                        <p>Conversión óptima de energía con monitoreo remoto.</p>
+                <!-- Service 3 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-microchip service-icon" aria-hidden="true"></i>
+                            <div class="service-title">Configuración de Inversores Inteligentes</div>
+                            <div class="service-desc">Implementación y programación de inversores para gestión inteligente del flujo energético.</div>
+                        </div>
                     </div>
                 </div>
-                <!-- Service Card 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card h-100 text-center p-4">
-                        <i class="fas fa-lightbulb service-icon mb-3"></i>
-                        <h5>Asesoría en Eficiencia Energética Urbana</h5>
-                        <p>Análisis y recomendaciones para maximizar ahorros.</p>
+                <!-- Service 4 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-lightbulb service-icon" aria-hidden="true"></i>
+                            <div class="service-title">Asesoría en Eficiencia Energética Urbana</div>
+                            <div class="service-desc">Consultoría especializada para optimizar el consumo y reducir costos en edificios urbanos.</div>
+                        </div>
                     </div>
                 </div>
-                <!-- Service Card 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card service-card h-100 text-center p-4">
-                        <i class="fas fa-tools service-icon mb-3"></i>
-                        <h5>Mantenimiento y Monitoreo</h5>
-                        <p>Servicios continuos para asegurar rendimiento óptimo.</p>
+                <!-- Service 5 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card service-card text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-tools service-icon" aria-hidden="true"></i>
+                            <div class="service-title">Mantenimiento y Monitoreo</div>
+                            <div class="service-desc">Servicios de mantenimiento preventivo y monitoreo remoto de sistemas solares.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -237,167 +424,180 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="sobre-nosotros" class="about-section py-5">
+    <section id="sobre-nosotros" class="about-section">
         <div class="container">
-            <h2 class="text-center mb-5">Sobre Nosotros</h2>
-            <p class="text-center lead">Somos un estudio de consultoría con más de 10 años de experiencia en soluciones solares adaptadas a entornos urbanos densos. Nuestro enfoque es en la sostenibilidad, reducción de costos y cumplimiento normativo para edificios multifamiliares.</p>
-            <div class="row mt-4">
-                <!-- Stat 1 -->
-                <div class="col-md-6 mb-4">
-                    <div class="stat-box">
-                        <h4>Más de 50 proyectos completados</h4>
-                    </div>
+            <div class="about-title text-center">Sobre Nosotros</div>
+            <div class="about-desc text-center">
+                Somos un estudio de consultoría con más de 10 años de experiencia en soluciones solares adaptadas a entornos urbanos densos. Nuestro enfoque es en la sostenibilidad, reducción de costos y cumplimiento normativo para edificios multifamiliares.
+            </div>
+            <div class="about-stats">
+                <div class="about-stat-box" aria-label="Proyectos Completados">
+                    <i class="fas fa-building" aria-hidden="true"></i> Más de 50 proyectos completados
                 </div>
-                <!-- Stat 2 -->
-                <div class="col-md-6 mb-4">
-                    <div class="stat-box">
-                        <h4>Ahorro promedio del 40% en facturas energéticas</h4>
-                    </div>
+                <div class="about-stat-box" aria-label="Ahorro Promedio">
+                    <i class="fas fa-percentage" aria-hidden="true"></i> Ahorro promedio del 40% en facturas energéticas
+                </div>
+                <div class="about-stat-box" aria-label="Testimonial">
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> “El equipo de SolarUrban nos ayudó a reducir costos y cumplir con las regulaciones urbanas.” <br><span style="font-size:0.91em;font-style:italic;color:#2196F3;">— Cliente Satisfecho</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section id="beneficios" class="py-5">
+    <section class="benefits-section" id="beneficios">
         <div class="container">
-            <h2 class="text-center mb-5">Beneficios</h2>
-            <div class="row">
-                <div class="col-md-6 benefit-item d-flex align-items-start">
-                    <i class="fas fa-leaf benefit-icon"></i>
-                    <div>
-                        <h5>Reducción de emisiones de CO2</h5>
-                        <p>Contribuye al medio ambiente con energía limpia.</p>
-                    </div>
+            <h2 class="text-center mb-5" style="color:#2196F3;font-weight:700;">Beneficios de la Energía Solar Urbana</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <i class="fas fa-leaf benefit-icon" aria-hidden="true"></i>
+                    <span>Reducción de emisiones de CO₂</span>
                 </div>
-                <div class="col-md-6 benefit-item d-flex align-items-start">
-                    <i class="fas fa-shield-alt benefit-icon"></i>
-                    <div>
-                        <h5>Independencia energética</h5>
-                        <p>Reduce dependencia de la red eléctrica tradicional.</p>
-                    </div>
+                <div class="benefit-item">
+                    <i class="fas fa-bolt benefit-icon" aria-hidden="true"></i>
+                    <span>Independencia energética</span>
                 </div>
-                <div class="col-md-6 benefit-item d-flex align-items-start">
-                    <i class="fas fa-money-bill-wave benefit-icon"></i>
-                    <div>
-                        <h5>Subvenciones y financiamiento disponible</h5>
-                        <p>Accede a incentivos gubernamentales y opciones de pago.</p>
-                    </div>
+                <div class="benefit-item">
+                    <i class="fas fa-piggy-bank benefit-icon" aria-hidden="true"></i>
+                    <span>Subvenciones y financiamiento disponible</span>
                 </div>
-                <div class="col-md-6 benefit-item d-flex align-items-start">
-                    <i class="fas fa-puzzle-piece benefit-icon"></i>
-                    <div>
-                        <h5>Integración seamless en estructuras existentes</h5>
-                        <p>Adaptable a edificios sin modificaciones mayores.</p>
-                    </div>
+                <div class="benefit-item">
+                    <i class="fas fa-puzzle-piece benefit-icon" aria-hidden="true"></i>
+                    <span>Integración seamless en estructuras existentes</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contacto" class="contact-section py-5">
+    <section id="contacto" class="contact-section">
         <div class="container">
-            <h2 class="text-center mb-5">Contacto</h2>
-            <div class="row">
-                <!-- Contact Form -->
-                <div class="col-md-6 mb-4">
-                    <form id="contact-form" aria-labelledby="contact-form-title">
-                        <h5 id="contact-form-title" class="mb-3">Envíanos un Mensaje</h5>
+            <div class="row justify-content-center align-items-start">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-title">Solicita una Consulta Gratuita</div>
+                    <form class="contact-form" id="contactForm" aria-label="Formulario de Contacto">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="contact-nombre" placeholder="Nombre" required aria-required="true">
+                            <input type="text" class="form-control" id="contactName" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="contact-email" placeholder="Email" required aria-required="true">
+                            <input type="email" class="form-control" id="contactEmail" name="email" placeholder="Email" aria-label="Email" required>
                         </div>
                         <div class="mb-3">
-                            <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required aria-required="true">
+                            <input type="tel" class="form-control" id="contactPhone" name="telefono" placeholder="Teléfono" aria-label="Teléfono" required>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" id="contact-mensaje" rows="4" placeholder="Mensaje" required aria-required="true"></textarea>
+                            <textarea class="form-control" id="contactMessage" name="mensaje" rows="3" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-cta w-100">Enviar</button>
+                        <button type="submit" class="btn" aria-label="Enviar Consulta">Enviar</button>
                     </form>
-                </div>
-                <!-- Contact Info and Map -->
-                <div class="col-md-6">
-                    <h5>Información de Contacto</h5>
-                    <p><strong>Email:</strong> info@solarurban.com</p>
-                    <p><strong>Teléfono:</strong> +123-456-7890</p>
-                    <p><strong>Dirección:</strong> Calle Ficticia 123, Ciudad, País</p>
-                    <!-- Social Media Links -->
-                    <div class="mb-3">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f me-3 fa-2x" style="color: #2196F3;"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter me-3 fa-2x" style="color: #2196F3;"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-2x" style="color: #2196F3;"></i></a>
+                    <div class="contact-info mt-3">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@solarurban.com">info@solarurban.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123-456-7890</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Calle Ficticia 123, Ciudad, País</p>
                     </div>
-                    <!-- Embedded Map Placeholder -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976314309273!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sus!4v1547825135904" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación ficticia"></iframe>
+                    <div class="contact-social" aria-label="Redes sociales">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="map-placeholder">
+                        <iframe src="https://maps.google.com/maps?q=Calle+Ficticia+123,+Ciudad,+País&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" title="Ubicación SolarUrban"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-4 text-center">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>© 2025 SolarUrban Consultoría. Todos los derechos reservados.</p>
-            <a href="#" class="text-white">Política de Privacidad</a>
+            <span>© 2025 SolarUrban Consultoría. Todos los derechos reservados.</span>
+            <span>| <a href="#">Política de Privacidad</a></span>
         </div>
     </footer>
+    <button class="back-to-top" id="backToTopBtn" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    <!-- Bootstrap JS & Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Embedded JavaScript -->
+    <!-- JavaScript for Interactions -->
     <script>
-        // Smooth Scrolling for Nav Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Basic Form Validation and Simulate Submit
-        const forms = document.querySelectorAll('#hero-form, #contact-form');
-        forms.forEach(form => {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                let isValid = true;
-                this.querySelectorAll('input[required], textarea[required]').forEach(field => {
-                    if (!field.value.trim()) {
-                        isValid = false;
-                        field.classList.add('is-invalid');
-                    } else {
-                        field.classList.remove('is-invalid');
+        // Smooth Scroll for menu links and CTA
+        document.querySelectorAll('.nav-link, .cta-btn').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    var targetElem = document.querySelector(targetId);
+                    if (targetElem) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElem.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
                     }
-                });
-                if (isValid) {
-                    alert('Formulario enviado con éxito! (Simulación - No hay backend real)');
-                    this.reset();
-                } else {
-                    alert('Por favor, completa todos los campos requeridos.');
                 }
             });
         });
 
-        // Back to Top Button
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
+        // Back-to-top button logic
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 350) {
+                backToTopBtn.classList.add('show');
             } else {
-                backToTop.classList.remove('show');
+                backToTopBtn.classList.remove('show');
             }
         });
-        backToTop.addEventListener('click', () => {
+        backToTopBtn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+        // Basic Form Validation & Alert (Lead + Contact)
+        function validateForm(inputs) {
+            let valid = true;
+            inputs.forEach(function(input) {
+                if (!input.value.trim()) {
+                    input.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    input.classList.remove('is-invalid');
+                }
+            });
+            return valid;
+        }
+        // Lead Form
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('leadName');
+            const email = document.getElementById('leadEmail');
+            const message = document.getElementById('leadMessage');
+            if (validateForm([name, email, message])) {
+                alert('¡Gracias por tu interés! Nos pondremos en contacto pronto.');
+                this.reset();
+            }
+        });
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName');
+            const email = document.getElementById('contactEmail');
+            const phone = document.getElementById('contactPhone');
+            const message = document.getElementById('contactMessage');
+            if (validateForm([name, email, phone, message])) {
+                alert('¡Gracias por tu consulta! Te contactaremos a la brevedad.');
+                this.reset();
+            }
+        });
+
+        // Accessibility: Focus outline on keyboard navigation
+        document.body.addEventListener('keyup', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
     </script>
+    <!-- END OF FILE. For future edits: update colors, content, and section structure as needed. -->
 </body>
 </html>
