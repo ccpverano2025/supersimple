@@ -27,40 +27,5 @@
         <button type="submit">Enviar</button>
     </form>
     <script src="formulario.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const leadFormSimple = document.getElementById('leadFormSimple');
-            if (leadFormSimple) {
-                leadFormSimple.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Usamos la misma función enviarFormulario pero con IDs de este formulario
-                    const nombre = document.getElementById('leadNameSimple').value.trim();
-                    const email = document.getElementById('leadEmailSimple').value.trim();
-                    const mensaje = document.getElementById('leadMessageSimple').value.trim();
-                    const source = document.getElementById('leadSourceSimple').value.trim();
-
-                    // Llamada directa al endpoint
-                    fetch(SHEETS_ENDPOINT, {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/json'},
-                        body: JSON.stringify({
-                            nombre,
-                            email,
-                            mensaje,
-                            source
-                        })
-                    })
-                    .then(res => res.text())
-                    .then(res => {
-                        alert('¡Gracias por tu interés! Nos pondremos en contacto pronto.');
-                        leadFormSimple.reset();
-                    })
-                    .catch(err => {
-                        alert('Hubo un error al enviar la consulta. Intenta nuevamente.');
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
