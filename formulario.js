@@ -1,7 +1,5 @@
-// URL de tu Google Apps Script Web App
 const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyd4xZeCgmnXixSi6J5KplqOmPC5-gBveeK9R6HXwn6TVKPp2Ql6qokn0_wiM1hmxhy/exec";
 
-// Enviar datos del formulario al Google Sheets, diferenciando el origen
 function enviarFormulario(formId, source) {
     const nombre = document.getElementById(`leadName${source}`).value.trim();
     const email = document.getElementById(`leadEmail${source}`).value.trim();
@@ -14,7 +12,7 @@ function enviarFormulario(formId, source) {
             nombre,
             email,
             mensaje,
-            source: source.toLowerCase() // "hero" o "contact"
+            source: source.toLowerCase()
         })
     })
     .then(res => res.text())
@@ -28,7 +26,6 @@ function enviarFormulario(formId, source) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Hero Section Form
     const leadFormHero = document.getElementById('leadFormHero');
     if (leadFormHero) {
         leadFormHero.addEventListener('submit', function(e) {
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Contact Section Form
     const leadFormContact = document.getElementById('leadFormContact');
     if (leadFormContact) {
         leadFormContact.addEventListener('submit', function(e) {
