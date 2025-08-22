@@ -3,110 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactanos - Formulario de Consultas</title>
+    <title>Formulario Google Forms</title>
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="background-animation">
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
-        </div>
-    </div>
-
     <div class="container">
-        <div class="header">
-            <i class="fas fa-paper-plane icon-header"></i>
-            <h1>¡Contáctanos!</h1>
-            <p class="subtitle">Estamos aquí para ayudarte. Déjanos tu mensaje y nos pondremos en contacto contigo muy pronto.</p>
-        </div>
-        
-        <form id="contactForm" class="contact-form">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="nombre">
-                        <i class="fas fa-user"></i>
-                        Nombre Completo
-                    </label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
-                    <div class="field-animation"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">
-                        <i class="fas fa-envelope"></i>
-                        Correo Electrónico
-                    </label>
-                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                    <div class="field-animation"></div>
-                </div>
-            </div>
-
+        <h2>Contacto</h2>
+        <p>Por favor, completa el formulario y nos pondremos en contacto contigo.</p>
+        <form id="contactForm">
             <div class="form-group">
-                <label for="fuente">
-                    <i class="fas fa-globe"></i>
-                    ¿Cómo nos conociste?
-                </label>
-                <select id="fuente" name="fuente" required>
-                    <option value="">Selecciona una opción</option>
-                    <option value="Redes Sociales">Redes Sociales</option>
-                    <option value="Google">Búsqueda en Google</option>
-                    <option value="Recomendación">Recomendación de un amigo</option>
-                    <option value="Publicidad">Publicidad online</option>
-                    <option value="Otros">Otros</option>
-                </select>
-                <div class="field-animation"></div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="entry.1604731498" required>
             </div>
-
             <div class="form-group">
-                <label for="mensaje">
-                    <i class="fas fa-comment-dots"></i>
-                    Tu Mensaje
-                </label>
-                <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." required rows="6"></textarea>
-                <div class="field-animation"></div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="entry.1843886309" required>
             </div>
-
-            <button type="submit" class="btn-submit" id="submitBtn">
-                <span class="btn-text">
-                    <i class="fas fa-rocket"></i>
-                    Enviar Mensaje
-                </span>
-                <div class="btn-sparkle"></div>
-            </button>
+            <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="entry.1443923370" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="source">Source</label>
+                <input type="text" id="source" name="entry.479977210" required>
+            </div>
+            <button type="submit">Enviar</button>
         </form>
-
-        <div class="loading" id="loading">
-            <div class="loading-animation">
-                <div class="loading-circle"></div>
-                <div class="loading-circle"></div>
-                <div class="loading-circle"></div>
-            </div>
-            <p>Enviando tu mensaje...</p>
-        </div>
-
-        <div class="message" id="message"></div>
-
-        <div class="footer-info">
-            <div class="info-card">
-                <i class="fas fa-clock"></i>
-                <span>Respuesta en 24 horas</span>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-shield-alt"></i>
-                <span>100% Seguro</span>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-heart"></i>
-                <span>Atención personalizada</span>
-            </div>
-        </div>
+        <div id="statusMessage"></div>
     </div>
-
     <script src="formulario.js"></script>
 </body>
 </html>
