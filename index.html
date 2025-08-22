@@ -1,32 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolarUrban Consultoría</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consultoría en Energía Solar para Edificios Urbanos | SolarUrban</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="https://via.placeholder.com/32x32?text=SU" type="image/png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a SolarUrban Consultoría</h1>
-        <p>Tu aliado en soluciones de energía solar.</p>
-    </header>
-    <main>
-        <section>
-            <h2>Servicios</h2>
-            <ul>
-                <li>Consultoría Energética</li>
-                <li>Instalación de Paneles Solares</li>
-                <li>Mantenimiento y Soporte</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Contacto</h2>
-            <p>Para más información, contáctanos al correo: info@solarurban.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 SolarUrban Consultoría. Todos los derechos reservados.</p>
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" aria-label="Main Navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">SolarUrban Consultoría</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#contacto" class="btn cta-btn ms-lg-3" aria-label="Solicita una Consulta Gratuita">Solicita una Consulta Gratuita</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section position-relative d-flex align-items-center justify-content-center">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title">Energía Solar Sostenible para Edificios Urbanos Multihabitacionales</h1>
+            <p class="hero-subtitle">Expertos en despliegue de paneles solares, baterías e inversores para optimizar el consumo energético en ciudades.</p>
+            <!-- Lead Capture Form -->
+            <form class="lead-form" id="leadFormHero" aria-label="Formulario de Consulta Rápida">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="leadNameHero" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="leadEmailHero" name="email" placeholder="Email" aria-label="Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="leadMessageHero" name="mensaje" rows="2" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn" aria-label="Enviar Consulta">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="container my-5">
+        <h2 class="mb-4">Servicios</h2>
+        <ul>
+            <li>Consultoría Energética</li>
+            <li>Instalación de Paneles Solares</li>
+            <li>Mantenimiento y Soporte</li>
+        </ul>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="container my-5">
+        <h2 class="mb-4">Sobre Nosotros</h2>
+        <p>SolarUrban Consultoría está formada por expertos en energía solar urbana. Ayudamos a edificios multihabitacionales a optimizar su consumo energético y reducir costos, adaptando la mejor tecnología solar disponible.</p>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="container my-5">
+        <h2 class="mb-4">Contacto</h2>
+        <form id="leadFormContact" class="lead-form" aria-label="Formulario de Contacto">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="leadNameContact" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="leadEmailContact" name="email" placeholder="Email" aria-label="Email" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" id="leadMessageContact" name="mensaje" rows="3" placeholder="Mensaje" aria-label="Mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn" aria-label="Enviar Contacto">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <span>© 2025 SolarUrban Consultoría. Todos los derechos reservados.</span>
+            <span>| <a href="#">Política de Privacidad</a></span>
+        </div>
     </footer>
+    <button class="back-to-top" id="backToTopBtn" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Bootstrap JS & Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lógica del formulario (Google Sheets) -->
+    <script src="formulario.js"></script>
 </body>
 </html>
