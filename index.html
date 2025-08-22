@@ -2,30 +2,282 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Form33GET Google Sheets Funcional33</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario GFORM00</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .field-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-    <h2>Formulario de PruebaGet33</h2>
-    <form id="leadFormSimple">
-        <div>
-            <label for="leadNameSimple">NombreFormuget33:</label>
-            <input type="text" id="leadNameSimple" required>
+    <div class="container">
+        <h1>Formulario de Contacto</h1>
+        
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="campo1">Campo 1</label>
+                <input type="text" id="campo1" name="campo1" required>
+                <div class="field-info">Este campo se enviará a entry.1604731498</div>
+            </div>
+
+            <div class="form-group">
+                <label for="campo2">Campo 2</label>
+                <input type="email" id="campo2" name="campo2" required>
+                <div class="field-info">Este campo se enviará a entry.1843886309</div>
+            </div>
+
+            <div class="form-group">
+                <label for="campo3">Campo 3</label>
+                <input type="text" id="campo3" name="campo3" required>
+                <div class="field-info">Este campo se enviará a entry.1443923370</div>
+            </div>
+
+            <div class="form-group">
+                <label for="campo4">Campo 4 (Mensaje)</label>
+                <textarea id="campo4" name="campo4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <div class="field-info">Este campo se enviará a entry.479977210</div>
+            </div>
+
+            <button type="submit" class="btn" id="submitBtn">Enviar Formulario</button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Enviando datos...</p>
         </div>
-        <div>
-            <label for="leadEmailSimple">Email:</label>
-            <input type="email" id="leadEmailSimple" required>
-        </div>
-        <div>
-            <label for="leadMessageSimple">Mensaje:</label>
-            <textarea id="leadMessageSimple" required></textarea>
-        </div>
-        <div>
-            <label for="leadSourceSimple">Source:</label>
-            <input type="text" id="leadSourceSimple" required>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>
-    <script src="formulario.js"></script>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const message = document.getElementById('message');
+
+        // URL de tu Google Form
+        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLScngS7b2bsrrEQLiHgN173vzBjasmuHIcXHaLe68qEZBci6pQ/formResponse';
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Mostrar loading
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            message.style.display = 'none';
+
+            // Crear FormData con los campos mapeados
+            const formData = new FormData();
+            
+            // Mapear cada campo de tu formulario con su entry correspondiente
+            formData.append('entry.1604731498', document.getElementById('campo1').value);
+            formData.append('entry.1843886309', document.getElementById('campo2').value);
+            formData.append('entry.1443923370', document.getElementById('campo3').value);
+            formData.append('entry.479977210', document.getElementById('campo4').value);
+
+            try {
+                // Enviar datos a Google Forms
+                await fetch(GOOGLE_FORM_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
+
+                // Mostrar mensaje de éxito
+                showMessage('¡Formulario enviado correctamente! Los datos se han guardado en Google Sheets.', 'success');
+                
+                // Limpiar formulario
+                form.reset();
+
+            } catch (error) {
+                console.error('Error:', error);
+                showMessage('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.', 'error');
+            } finally {
+                // Ocultar loading
+                submitBtn.disabled = false;
+                loading.style.display = 'none';
+            }
+        });
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = `message ${type}`;
+            message.style.display = 'block';
+            
+            // Auto-ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 5000);
+        }
+
+        // Animación suave para los inputs
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
