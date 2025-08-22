@@ -1,5 +1,5 @@
-// Tu nuevo endpoint
-const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyH2ik3IoJ4Cqzr3yDrTLjx0W4woXHz2101Ofdec8PtvPkoAHPUwB_8AS67sDTyfKrT/exec";
+// Tu nuevo endpoint GET
+const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbysEu6pLwTkrDD1y420XxXJrgaNWG5tNg48OBfk0x0K0KBkJDKIkk-dYSfBcXIR4ZT0/exec";
 
 document.addEventListener("DOMContentLoaded", function() {
     const leadFormSimple = document.getElementById('leadFormSimple');
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         leadFormSimple.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Prepara los datos como un objeto JSON
+            // Prepara los datos como un objeto para la URL
             const data = {
                 nombre: document.getElementById('leadNameSimple').value.trim(),
                 email: document.getElementById('leadEmailSimple').value.trim(),
@@ -15,12 +15,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 source: document.getElementById('leadSourceSimple').value.trim()
             };
 
-            fetch(SHEETS_ENDPOINT, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify(data)
+            // Crea la URL con los parámetros
+            const url = `${SHEETS_ENDPOINT}?${new URLSearchParams(data).toString()}`;
+
+            fetch(url, {
+                method: 'GET' // Cambiamos a GET
             })
             .then(res => res.text())
             .then(res => {
