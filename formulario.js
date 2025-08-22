@@ -1,5 +1,5 @@
-// Tu endpoint correcto
-const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzU0ycBwyMAzElKtYwktuiDBrKbY-APBoptTHTw9-PM4VTzi3qf3LNq8DOWuvnU1iXa/exec";
+// Tu nuevo endpoint
+const SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyH2ik3IoJ4Cqzr3yDrTLjx0W4woXHz2101Ofdec8PtvPkoAHPUwB_8AS67sDTyfKrT/exec";
 
 document.addEventListener("DOMContentLoaded", function() {
     const leadFormSimple = document.getElementById('leadFormSimple');
@@ -7,19 +7,20 @@ document.addEventListener("DOMContentLoaded", function() {
         leadFormSimple.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Prepara los datos en formato x-www-form-urlencoded
-            const params = new URLSearchParams();
-            params.append('nombre', document.getElementById('leadNameSimple').value.trim());
-            params.append('email', document.getElementById('leadEmailSimple').value.trim());
-            params.append('mensaje', document.getElementById('leadMessageSimple').value.trim());
-            params.append('source', document.getElementById('leadSourceSimple').value.trim());
+            // Prepara los datos como un objeto JSON
+            const data = {
+                nombre: document.getElementById('leadNameSimple').value.trim(),
+                email: document.getElementById('leadEmailSimple').value.trim(),
+                mensaje: document.getElementById('leadMessageSimple').value.trim(),
+                source: document.getElementById('leadSourceSimple').value.trim()
+            };
 
             fetch(SHEETS_ENDPOINT, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'text/plain;charset=utf-8'
                 },
-                body: params.toString()
+                body: JSON.stringify(data)
             })
             .then(res => res.text())
             .then(res => {
